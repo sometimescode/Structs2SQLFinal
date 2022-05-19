@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index"/>
+
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
+        <action name="News" class="project.example.News">
+            <result>/WEB-INF/Pages/News.jsp</result>
+        </action>
+
+        <action name="Gallery" class="project.example.Gallery">
+            <result>/WEB-INF/Pages/Gallery.jsp</result>
+        </action>
+
+        <action name="About" class="project.example.About">
+            <result>/WEB-INF/Pages/About.jsp</result>
+        </action>
+
+        <action name="Login" class="project.example.Login">
+            <result>/WEB-INF/Pages/Login.jsp</result>
+        </action>
+
+        <action name="Register" class="project.example.Register">
+            <result>/WEB-INF/Pages/Register.jsp</result>
+        </action>
+
+        <action name="AddUserToDB" class="project.example.AddUserToDB">
+            <result name="input">/WEB-INF/Pages/Register.jsp</result>
+            <result name="success">/WEB-INF/Pages/RegistrationSuccess.jsp</result>
+            <result name="error">/WEB-INF/Pages/Error.jsp</result>
+        </action>
+
+        <action name="CheckUserCredentials" class="project.example.CheckUserCredentials">
+            <result name="input">/WEB-INF/Pages/Login.jsp</result>
+            <result name="success">/WEB-INF/Pages/Profile.jsp</result>
+            <result name="error">/WEB-INF/Pages/Error.jsp</result>
+        </action>
+
+        <action name="AccountList" class="project.example.AccountList">
+            <result>/WEB-INF/Pages/AccountList.jsp</result>
+        </action>
+    </package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>
